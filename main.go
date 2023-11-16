@@ -16,7 +16,7 @@ func main() {
 	r.HandleFunc("/deleterecord/{name}", controller.DeleteByName).Methods("DELETE") // No data available response
 	r.HandleFunc("/getrecord/{name}", controller.GetByName).Methods("GET")
 	r.HandleFunc("/updaterecord/{name}", controller.UpdateByName).Methods("PUT")
-	log.Fatal(http.ListenAndServe(":3000", r))
+	log.Fatal(http.ListenAndServe("0.0.0.0"+":3000", r))
 }
 
 //data access layers
